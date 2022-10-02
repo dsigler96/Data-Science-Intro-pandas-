@@ -117,32 +117,32 @@ data.plot.scatter(x=var, y='SalePrice', ylim=(0,800000))
 plt.show()
 
 # With the modified data, lets replot the sale price histogram with the normal graph
-sns.distplot(dfTrain['SalePrice'], fit=norm)
+sns.displot(dfTrain['SalePrice'], fit=norm)
 fig = plt.figure()
 res = stats.probplot(dfTrain['SalePrice'], plot=plt)
 plt.show()
 
 # Since the probability plot was showing to be exponential and not linear, I wanted to try a log transformation to see what that did to the data set
 dfTrain['SalePrice'] = np.log(dfTrain['SalePrice'])
-sns.distplot(dfTrain['SalePrice'], fit=norm)
+sns.displot(dfTrain['SalePrice'], fit=norm)
 fig = plt.figure()
 res = stats.probplot(dfTrain['SalePrice'], plot=plt)
 plt.show()
 
 # That transformation looked great, so lets do the same on GrLivArea, showing the before and after
-sns.distplot(dfTrain['GrLivArea'], fit=norm)
+sns.displot(dfTrain['GrLivArea'], fit=norm)
 fig = plt.figure()
 res = stats.probplot(dfTrain['GrLivArea'], plot=plt)
 plt.show()
 
 dfTrain['GrLivArea'] = np.log(dfTrain['GrLivArea'])
-sns.distplot(dfTrain['GrLivArea'], fit=norm)
+sns.displot(dfTrain['GrLivArea'], fit=norm)
 fig = plt.figure()
 res = stats.probplot(dfTrain['GrLivArea'], plot=plt)
 plt.show()
 
 # TotalBsmtSF before any transformations
-sns.distplot(dfTrain['TotalBsmtSF'], fit=norm)
+sns.displot(dfTrain['TotalBsmtSF'], fit=norm)
 fig = plt.figure()
 res = stats.probplot(dfTrain['TotalBsmtSF'], plot=plt)
 plt.show()
