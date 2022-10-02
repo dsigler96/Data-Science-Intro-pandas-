@@ -2,7 +2,7 @@
 
 This is going to be an evolving project as it started as an intro to Panas but slowly evolved into a crash course on machine learning.  This subject has always interested me because I like the idea of analyzing relationships and coming to conclusions of how different variables relate to each other while being as objective as possible.  I decided to start with the data set enclosed in the repository because it would provide evolution to a machine learning test with the train by learning things related to the price of the house.  
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/bHI1rsyF_zU)
 
 # Data Analysis Results
 
