@@ -28,12 +28,6 @@ print("Skewness: %f" % dfTrain['SalePrice'].skew())
 print("Kurtosis: %f" % dfTrain['SalePrice'].kurt())
 # This data has a positive skew (leans left), and a kurtosis of 6 (peaks are higher) but it is enough to be modelled accurately
 
-#First thing that I want to do is find variables that have a strong relationship, and a Correlation Matrix would show that very quickly
-corMat = dfTrain.corr()
-f, ax = plt.subplots(figsize = (9, 12))
-sns.heatmap(corMat, vmax = .8, square = True)
-plt.show()
-
 # Show a scatterplot of the SalePrice and GrLivArea (size of property)
 var  = 'GrLivArea'
 data = pd.concat([dfTrain['SalePrice'], dfTrain[var]], axis = 1)
@@ -67,11 +61,20 @@ plt.xticks(rotation = 90)
 plt.show()
 # I anticipated more of a slope to the relationship between Year and Price, but their is still a linear relatinship that seems to indicate the price goes higher with newer homes
 
+# A Correlation Matrix would show that very quickly what variables have strong relationships with each other
+corMat = dfTrain.corr()
+f, ax = plt.subplots(figsize = (9, 12))
+sns.heatmap(corMat, vmax = .8, square = True)
+plt.show()
+
 # Now I wanted to show a SalePrice Correlation Matrix after looking at their individual relationships with variables that stuck out
 i = 10
 cols = corMat.nlargest(i, 'SalePrice')['SalePrice'].index
 cM = np.corrcoef(dfTrain[cols].values.T)
 sns.set(font_scale = 1.5)
 hm = sns.heatmap(cM, cbar = True, annot = True, square = True, fmt = '.2f', annot_kws = {'size' : 10}, yticklabels = cols.values, xticklabels = cols.values)
+plt.show()
 
-#45
+
+
+#51
